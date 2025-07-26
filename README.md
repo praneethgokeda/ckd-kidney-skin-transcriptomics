@@ -2,7 +2,7 @@
 
 **Author**: Praneeth Gokeda  
 **Type**: Systems Biology / RNA-Seq Project  
-**Tools**: FastQC, Trim Galore, HISAT2, HTSeq, edgeR, STRING, Enrichr, Cytoscape
+**Tools**: FastQC, Trim Galore, HISAT2, HTSeq, edgeR(`rna_seq.R`), STRING, Enrichr, Cytoscape
 
 ---
 
@@ -13,14 +13,12 @@ This project explores the shared inflammatory mechanisms in kidney and skin tiss
 ---
 
 ## 📁 Folder Structure
-
 systems_project/
-├── data/ → Gene count files (.count.txt)
-├── results/ → Plots, PPI networks, KEGG images, enrichment CSVs
-├── report/ → Final PDF report with figures and references
-
-
----
+├── data/ # Gene count files (.count.txt)
+├── results/ # Plots, PPI networks, KEGG images, enrichment CSVs
+├── report/ # Final PDF report with figures and references
+├── rna_seq.R # R script for edgeR analysis and heatmap generation
+├── README.md # Project overview and usage guide
 
 ## Data Source
 
@@ -37,7 +35,7 @@ Raw FASTQ/BAM files are not included due to size. Preprocessing and mapping were
 1. **Preprocessing**: FastQC + Trim Galore  
 2. **Mapping**: HISAT2 (GRCh38 genome)  
 3. **Counting**: HTSeq-count  
-4. **DEG Analysis**: edgeR in R  
+4. **DEG Analysis**: edgeR in R  (via `rna_seq.R`)
 5. **Enrichment**: Enrichr (GO, KEGG), STRING + Cytoscape  
 6. **Visualization**: PCA, MDS, BCV, heatmaps, PPI, pathway maps
 
@@ -54,6 +52,11 @@ Raw FASTQ/BAM files are not included due to size. Preprocessing and mapping were
 
 ---
 
+## Running the Script
+
+The R script `rna_seq.R` performs edgeR analysis and generates a heatmap from the count files.
+source("rna_seq.R")
+
 ## Report
 
 View full findings and references in the PDF:  
@@ -65,7 +68,6 @@ View full findings and references in the PDF:
 
 - Raw data not uploaded. See data source above.
 - This project is focused on downstream interpretation and visualization.
-- R scripts not included.
 
 ---
 
